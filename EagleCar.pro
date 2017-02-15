@@ -11,9 +11,18 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = EagleCar
 TEMPLATE = app
 
+LIBS += -LC:/opencv/build/x64/vc14/lib
+LIBS += -lopencv_world310
+
+
+INCLUDEPATH += C:/opencv/build/include/opencv2
+INCLUDEPATH += C:/opencv/build/include
+
 
 SOURCES += main.cpp\
         mainwindow.cpp
+
+
 
 HEADERS  += mainwindow.h
 
