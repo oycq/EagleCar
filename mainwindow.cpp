@@ -19,7 +19,7 @@ MainWindow::~MainWindow()
 
 void  MainWindow::showtime()
 {
-    qDebug()<<"123";
+    //qDebug()<<"123";
 
 
 }
