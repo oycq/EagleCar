@@ -22,7 +22,7 @@ void runtimer::getms()
 {
     sumtime += getTickCount() - time;
     sumfrequency += getTickFrequency();
-    if ((sumtime / sumfrequency *i* 1000)>=100)
+    if ((sumtime / sumfrequency *i* 1000)>=300)
     {
        sprintf(mystring,"%.2fms", sumtime / sumfrequency * 1000);
        data=mystring;

@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "runtimer.h"
 #include "QtCore"
 #include <QDebug>
+extern runtimer t1;
 QTimer *showtimer=new QTimer();
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -19,7 +21,7 @@ MainWindow::~MainWindow()
 
 void  MainWindow::showtime()
 {
-    //qDebug()<<"123";
+    ui->label->setText(t1.data);
 
 
 }

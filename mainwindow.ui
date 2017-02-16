@@ -17,14 +17,27 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>180</y>
+      <x>340</x>
+      <y>190</y>
       <width>54</width>
       <height>12</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>--</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>190</y>
+      <width>54</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>runtime1</string>
     </property>
    </widget>
   </widget>

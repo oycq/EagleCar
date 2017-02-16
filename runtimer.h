@@ -13,13 +13,13 @@ public:
     runtimer();
     void getstart();
     void getms();
+    QString data;
 private:
     int time;
     int sumtime;
     double sumfrequency;
     int i;
     char mystring[30];
-    QString data;
 };
 
 
