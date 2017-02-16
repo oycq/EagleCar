@@ -1,10 +1,11 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include "timer.h"
+#include <QtCore>
+#include "runtimer.h"
 #include "opencv.hpp"
 using namespace std;
 using namespace cv;
-timer t1;
+runtimer t1;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

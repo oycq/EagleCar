@@ -21,11 +21,11 @@ INCLUDEPATH += C:/opencv/build/include
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    timer.cpp
+    runtimer.cpp
 
 
 
 HEADERS  += mainwindow.h \
-    timer.h
+    runtimer.h
 
 FORMS    += mainwindow.ui

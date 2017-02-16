@@ -1,5 +1,5 @@
-#ifndef TIMER_H
-#define TIMER_H
+#ifndef RUNTIMER_H
+#define RUNTIMER_H
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -7,10 +7,10 @@
 using namespace cv;
 using namespace std;
 
-class timer
+class runtimer
 {
 public:
-    timer();
+    runtimer();
     void getstart();
     void getms();
 private:
@@ -23,4 +23,4 @@ private:
 };
 
 
-#endif // TIMER_H
+#endif // RUNTIMER_H
