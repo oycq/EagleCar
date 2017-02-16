@@ -10,7 +10,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-   // w.show();
+    w.show();
+
     namedWindow("video");
     VideoCapture webcam(0);
     Mat pin;

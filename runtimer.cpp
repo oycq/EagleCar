@@ -26,7 +26,7 @@ void runtimer::getms()
     {
        sprintf(mystring,"%.2fms", sumtime / sumfrequency * 1000);
        data=mystring;
-       qDebug()<<data;
+       //qDebug()<<data;
        i = 0;
        sumtime=0;
        sumfrequency=0;
