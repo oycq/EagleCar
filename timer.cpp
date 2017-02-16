@@ -1,5 +1,6 @@
 #include "timer.h"
 #include "stdio.h"
+#include "QDebug"
 timer::timer()
 {
     i = 0;
@@ -16,10 +17,6 @@ void timer::getstart()
     time = getTickCount();
 }
 
-void timer::setlabel(QLabel *uilabel)
-{
-    label=uilabel;
-}
 
 void timer::getms()
 {
@@ -27,8 +24,11 @@ void timer::getms()
     sumfrequency += getTickFrequency();
     if (i == 10)
     {
-       sprintf(mystring,"%.2fms\r\n", sumtime / sumfrequency * 1000);
-       label->setText(mystring);
+       sprintf(mystring,"%.2fms", sumtime / sumfrequency * 1000);
+       data=mystring;
+       qDebug()<<data;
        i = 0;
+       sumtime=0;
+       sumfrequency=0;
     }
 }

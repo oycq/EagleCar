@@ -9,13 +9,14 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    w.show();
+   // w.show();
     namedWindow("video");
     VideoCapture webcam(0);
     Mat pin;
     while (1){
         t1.getstart();
         webcam >> pin;
+        t1.getms();
         imshow("video",pin);
         waitKey(1);
         t1.getms();
