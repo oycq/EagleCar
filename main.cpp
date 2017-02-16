@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
     while (1){
         t1.getstart();
         webcam >> pin;
-        t1.getms();
         imshow("video",pin);
         waitKey(1);
         t1.getms();
