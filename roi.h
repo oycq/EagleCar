@@ -5,15 +5,17 @@ using namespace cv;
 class ROI
 {
 public:
-    ROI(Mat ori,int sequence,int roiWidth=32,int roiHeight=50,int whetherDraw=0);
+    ROI(Mat ori,int sequence,int startY,int roiHeight=50,int roiWidth=20,int threshold=500);
     int returnValue();
 private:
     Mat roi;
     int sequence;
-    bool draw;
     int width;
     int height;
     int startPlace;
+    int number;
+    int y;
+    int thresh;
     void drawLine();
 
 };

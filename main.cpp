@@ -1,9 +1,12 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QtCore>
+#include <QtDebug>
 #include "runtimer.h"
 #include "roi.h"
 #include "opencv.hpp"
+#include "lr.h"
+#include "bias.h"
 using namespace std;
 using namespace cv;
  runtimer t1;
@@ -21,8 +24,12 @@ int main(int argc, char *argv[])
         cvtColor( pin, pin, CV_BGR2GRAY );
         equalizeHist(pin,pin2);
         threshold(pin2,pin2,40,200,0);
-        ROI myroi(pin2,19);
-        myroi.returnValue();
+        bias myBias(pin2,0,50,32,100);
+        line(pin2,Point(320,0),Point(320,480),Scalar(0),1);
+        qDebug()<<myBias.getResult();
+        //lr mylr(pin2,300,100,32,50,70);
+        // lr(Mat original,int startY,int height,int roiNum=32,int roiThresh=40,int roiDegree=70);
+        //qDebug()<<mylr.getResult();
         imshow("video",pin);
         imshow("equalizeHist",pin2);
         waitKey(1);
