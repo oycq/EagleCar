@@ -16,13 +16,13 @@ int blank::feed(Mat feedmat)
 {
     char mystring[20];
     ori=feedmat;
-    int b=0;
+    int b=1;
     for (int i=0;i<num;i++)
     {
         if (abs(i-num/2)>num/2*degree/100) continue;
         ROI roi(ori,i,y0,h,640/num,thresh);
         if (roi.returnValue()){
-            b=1;
+            b=0;
         }
     }
     sprintf(mystring,"blank=%d",b);
