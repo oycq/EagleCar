@@ -1,9 +1,8 @@
 #include "lr.h"
 #include "roi.h"
 
-lr::lr(Mat original,int startY,int height,int roiNum,int roiThresh,int roiDegree)
+lr::lr(int startY,int height,int roiNum,int roiThresh,int roiDegree)
 {
-    ori=original;
     y0=startY;
     h=height;
     num=roiNum;
@@ -11,8 +10,9 @@ lr::lr(Mat original,int startY,int height,int roiNum,int roiThresh,int roiDegree
     thresh=roiThresh;
 }
 
-int lr::getResult()
+int lr::feed(Mat feedmat)
 {
+    ori=feedmat;
     int left=0,right=0;
     for (int i=0;i<num;i++)
     {
@@ -32,4 +32,22 @@ int lr::getResult()
 
 
 }
+void lr::y0down()
+{
+    if ((y0+1+h)<480-1) y0++;
+}
 
+void lr::y0up()
+{
+    y0--;
+}
+
+void lr::addh()
+{
+   if ((y0+1+h)<480-1) h++;
+}
+
+void lr::reduceh()
+{
+   h--;
+}

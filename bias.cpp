@@ -4,17 +4,17 @@
 #include "opencv.hpp"
 #include "QDebug"
 using namespace cv;
-bias::bias(Mat original,int startY,int height,int roiNum,int roiThresh)
+bias::bias(int startY,int height,int roiNum,int roiThresh)
 {
-    ori=original;
     y0=startY;
     h=height;
     num=roiNum;
     thresh=roiThresh;
 }
 
-int bias::getResult()
+int bias::feed(Mat feedmat)
 {
+    ori=feedmat;
     double a=0;
     double b=0;
     int n=0;
@@ -30,3 +30,24 @@ int bias::getResult()
     }
   return (int)a;
 }
+
+void bias::y0down()
+{
+    if ((y0+1+h)<480-1) y0++;
+}
+
+void bias::y0up()
+{
+    y0--;
+}
+
+void bias::addh()
+{
+   if ((y0+1+h)<480-1) h++;
+}
+
+void bias::reduceh()
+{
+   h--;
+}
+

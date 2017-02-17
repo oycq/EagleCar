@@ -4,9 +4,8 @@
 #include "opencv.hpp"
 using namespace cv;
 
-blank::blank(Mat original,int startY,int height,int roiNum,int roiThresh,int roiDegree)
+blank::blank(int startY,int height,int roiNum,int roiThresh,int roiDegree)
 {
-    ori=original;
     y0=startY;
     h=height;
     num=roiNum;
@@ -14,8 +13,9 @@ blank::blank(Mat original,int startY,int height,int roiNum,int roiThresh,int roi
     thresh=roiThresh;
 }
 
-int blank::getResult()
+int blank::feed(Mat feedmat)
 {
+    ori=feedmat;
     int b=0;
     for (int i=0;i<num;i++)
     {
@@ -28,3 +28,22 @@ int blank::getResult()
     return b;
 }
 
+void blank::y0down()
+{
+    if ((y0+1+h)<480-1) y0++;
+}
+
+void blank::y0up()
+{
+    y0--;
+}
+
+void blank::addh()
+{
+   if ((y0+1+h)<480-1) h++;
+}
+
+void blank::reduceh()
+{
+   h--;
+}

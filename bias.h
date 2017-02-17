@@ -5,8 +5,12 @@ using namespace cv;
 class bias
 {
 public:
-    int getResult();
-    bias(Mat original,int startY,int height,int roiNum=32,int roiThresh=40);
+    bias(int startY,int height,int roiNum=32,int roiThresh=40);
+    int feed(Mat feedmat);
+    void y0up();
+    void y0down();
+    void addh();
+    void reduceh();
 private:
     Mat ori;
     int y0;

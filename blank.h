@@ -6,8 +6,12 @@ using namespace cv;
 class blank
 {
 public:
-    int getResult();
-    blank(Mat original,int startY,int height,int roiNum=32,int roiThresh=40,int roiDegree=70);
+    blank(int startY,int height,int roiNum=32,int roiThresh=40,int roiDegree=70);
+    int feed(Mat feedmat);
+    void y0up();
+    void y0down();
+    void addh();
+    void reduceh();
 private:
     Mat ori;
     int y0;
