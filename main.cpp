@@ -25,12 +25,13 @@ int main(int argc, char *argv[])
         cvtColor( pin, pin, CV_BGR2GRAY );
         equalizeHist(pin,pin2);
         threshold(pin2,pin2,40,200,0);
-        blank myBlank(pin2,80,50,32,100,70);
+        blank myBlank(pin2,250,50,32,100,70);
+        lr myLr(pin2,350,70,32,50,70);
+        bias myBias(pin2,439,40,32,100);
+        myLr.getResult();
+        myBias.getResult();
+        myBlank.getResult();
         line(pin2,Point(320,0),Point(320,480),Scalar(0),1);
-        qDebug()<<myBlank.getResult();
-        //lr mylr(pin2,300,100,32,50,70);
-        // lr(Mat original,int startY,int height,int roiNum=32,int roiThresh=40,int roiDegree=70);
-        //qDebug()<<mylr.getResult();
         imshow("video",pin);
         imshow("equalizeHist",pin2);
         waitKey(1);
