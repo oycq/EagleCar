@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>182</width>
+    <width>194</width>
     <height>401</height>
    </rect>
   </property>
@@ -17,8 +17,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>322</y>
+      <x>100</x>
+      <y>320</y>
       <width>54</width>
       <height>20</height>
      </rect>
@@ -30,14 +30,14 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>325</y>
+      <x>40</x>
+      <y>320</y>
       <width>51</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>runtime1</string>
+     <string>runtime</string>
     </property>
    </widget>
    <widget class="QScrollBar" name="horizontalScrollBar">
@@ -215,7 +215,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>182</width>
+     <width>194</width>
      <height>23</height>
     </rect>
    </property>

@@ -14,6 +14,7 @@ bias::bias(int startY,int height,int roiNum,int roiThresh)
 
 int bias::feed(Mat feedmat)
 {
+    char mystring[30];
     ori=feedmat;
     double a=0;
     double b=0;
@@ -28,7 +29,10 @@ int bias::feed(Mat feedmat)
             n++;
         }
     }
-  return (int)a;
+    if (a>=0) sprintf(mystring,"L=%d  R=%d",0,(int)a);
+        else sprintf(mystring,"L=%d  R=%d",(int)-a,0);
+    putText(ori,mystring,Point(15,60),CV_FONT_HERSHEY_SIMPLEX,1.0,Scalar(50),2);
+    return (int)a;
 }
 
 void bias::y0down()

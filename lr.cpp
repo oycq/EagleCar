@@ -12,6 +12,8 @@ lr::lr(int startY,int height,int roiNum,int roiThresh,int roiDegree)
 
 int lr::feed(Mat feedmat)
 {
+    int b=0;
+    char mystring[30];
     ori=feedmat;
     int left=0,right=0;
     for (int i=0;i<num;i++)
@@ -22,13 +24,15 @@ int lr::feed(Mat feedmat)
               else right++;
         }
     }
+    sprintf(mystring,"rect=    ");
     if ((left>(num*degree/100/2))&&(right>(num*degree/100/2)))
-         return 3;
+         {b=3;    sprintf(mystring,"rect=LLRR");}
     if ((left>(num*degree/100/2))&&(right<=(num*degree/100/2)))
-         return 1;
+         {b=1;    sprintf(mystring,"rect=LL  ");}
     if ((left<=(num*degree/100/2))&&(right>(num*degree/100/2)))
-         return 2;
-    return 0;
+         {b=2;    sprintf(mystring,"blank=  RR");}
+    putText(ori,mystring,Point(15,90),CV_FONT_HERSHEY_SIMPLEX,1.0,Scalar(50),2);
+    return b;
 
 
 }

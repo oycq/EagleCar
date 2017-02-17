@@ -3,7 +3,6 @@
 #include "math.h"
 #include "opencv.hpp"
 using namespace cv;
-
 blank::blank(int startY,int height,int roiNum,int roiThresh,int roiDegree)
 {
     y0=startY;
@@ -15,6 +14,7 @@ blank::blank(int startY,int height,int roiNum,int roiThresh,int roiDegree)
 
 int blank::feed(Mat feedmat)
 {
+    char mystring[20];
     ori=feedmat;
     int b=0;
     for (int i=0;i<num;i++)
@@ -25,6 +25,8 @@ int blank::feed(Mat feedmat)
             b=1;
         }
     }
+    sprintf(mystring,"blank=%d",b);
+    putText(ori,mystring,Point(15,30),CV_FONT_HERSHEY_SIMPLEX,1.0,Scalar(50),2);
     return b;
 }
 
