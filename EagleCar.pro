@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     runtimer.cpp \
     roi.cpp \
     lr.cpp \
-    bias.cpp
+    bias.cpp \
+    blank.cpp
 
 
 
@@ -32,6 +33,7 @@ HEADERS  += mainwindow.h \
     runtimer.h \
     roi.h \
     lr.h \
-    bias.h
+    bias.h \
+    blank.h
 
 FORMS    += mainwindow.ui
